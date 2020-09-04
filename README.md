@@ -52,7 +52,6 @@ React uses Lifecycle methods to accomplish the objectives of the Lifecycle phase
 Stateful logic is the behavior that is created with the use of hooks. It is basically code that uses state.
 
 5. Describe how to test a React component with React Testing Library.
-
 Import: react testing library
   Arrange: set up the test
   Act: query the DOM
