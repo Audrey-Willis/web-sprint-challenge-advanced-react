@@ -2,18 +2,13 @@ import React, { Component } from "react";
 import axios from "axios";
 
 export default class PlantList extends Component {
-  // add state with a property called "plants" - initialize as an empty array
-  constructor() {
+  constructor() { // set up the class component and the state  - Audrey
     super();
     this.state = {
       plants: [],
     };
   }
-
-  // when the component mounts:
-  //   - fetch data from the server endpoint - http://localhost:3333/plants
-  //   - set the returned plants array to this.state.plants
-  componentDidMount() {
+  componentDidMount() {//Managed API - Audrey
     axios
       .get("http://localhost:3333/plants")
       .then((res) => {
@@ -23,7 +18,7 @@ export default class PlantList extends Component {
       .catch((err) => console.log(err));
   }
 
-  /*********  DON'T CHANGE ANYTHING IN THE RENDER FUNCTION *********/
+  /*********  AUDREY DID NOTHING TO THE RENDER *********/
   render() {
     return (
       <main className="plant-list">

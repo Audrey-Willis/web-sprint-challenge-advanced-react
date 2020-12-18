@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useForm } from "../hooks/useForm"; //imported useform
+import { useForm } from "../hooks/useForm";
 
 const initialValue = {
   firstName: "",
@@ -10,17 +10,9 @@ const initialValue = {
   zip: "",
 };
 
-// This form should be handled by a "useForm" custom hook
-// Build out the logic needed for a form custom hook (see the useForm.js file)
-// and replace the necessary stateful logic from CheckoutForm with the hook
-
 const CheckoutForm = (props) => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const [values, handleChanges] = useForm(initialValue); //called custom useform hook
-
-  /*const handleChanges = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value });
-  };*/
+  const [values, handleChanges] = useForm(initialValue); //called custom useForm hook-Audrey
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,66 +20,69 @@ const CheckoutForm = (props) => {
   };
 
   return (
-    <>
+    <div>
       <form onSubmit={handleSubmit}>
-        <h2>Checkout Form</h2>
+        <h1>Checkout Form</h1>
+       
         <label>
           First Name:
           <input
             name="firstName"
             value={values.firstName}
             onChange={handleChanges}
-          />
+            required/>
         </label>
+       
         <label>
           Last Name:
           <input
             name="lastName"
             value={values.lastName}
             onChange={handleChanges}
-          />
+            required/>
         </label>
+        
         <label>
           Address:
           <input
             name="address"
             value={values.address}
             onChange={handleChanges}
-          />
+            required/>
         </label>
+        
         <label>
           City:
-          <input name="city" value={values.city} onChange={handleChanges} />
+          <input name="city" value={values.city} onChange={handleChanges}required />
         </label>
+        
         <label>
           State:
-          <input name="state" value={values.state} onChange={handleChanges} />
+          <input name="state" value={values.state} onChange={handleChanges} required />
         </label>
+        
         <label>
           Zip:
-          <input name="zip" value={values.zip} onChange={handleChanges} />
+          <input name="zip" value={values.zip} onChange={handleChanges} required />
         </label>
-        <button data-testid="checkout">Checkout</button>
+       
+        <button test-id ="checkout">Checkout</button>
       </form>
 
       {showSuccessMessage && (
-        <div className="success-message" data-testid="successMessage">
-          <p>
-            You have ordered some plants! Woo-hoo! <span role="img">🎉</span>
-          </p>
-          <p>Your new green friends will be shipped to:</p>
-          <br />
-          <br />
-          <p>
-            {values.firstName} {values.lastName}
-          </p>
-          <p>{values.address}</p>
-          <p>
-            {values.city}, {values.state} {values.zip}
-          </p>
-        </div>
+        <div className="success-message" test-id = "successMessage">
+            <p>You have ordered some plants! Woo-hoo! 
+              <span role="img">🎉</span>
+            </p>
+            <p>Your new green friends will be shipped to:</p>
+              <br />
+              <br />
+            <p>{values.firstName} {values.lastName}</p>
+            <p>{values.address}</p>
+            <p>{values.city}, {values.state} {values.zip}</p>
+          </div>
       )}
-    </>
+    </div>
   );
 };
 
