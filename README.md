@@ -141,14 +141,14 @@ After finishing your required elements, you can push your work further. These go
 - [ ] Build and implement another custom hook - a dark mode hook would be great for this project, though you'll have to style the light theme ☀️ 🌙
 - [ ] Add a test file for the `ShoppingCart` component and test that it displays plants there (you'll need some mock plant data for the test, and then you can pass that data in as a prop when you call `render` and render the component - see the example below)
 
-```js
-const plants = {{}, {}, {}} 
-test("displays plants in cart", () => {
-  const { getByText } = render(<ShoppingCart cart={plants} />)
+//```js
+//const plants = {{}, {}, {}} 
+//test("displays plants in cart", () => {
+  //const { getByText } = render(<ShoppingCart cart={plants} />)
 
   ...
 
-})
+//})
 ```
 
 ## Submission format
